@@ -33,4 +33,9 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
     public boolean register(Customer customer) {
         return true;
     }
+
+    public static void main(String[] args) {
+        Customer customer = new CustomerDAO().getCustomerByID(1);
+
+    }
 }

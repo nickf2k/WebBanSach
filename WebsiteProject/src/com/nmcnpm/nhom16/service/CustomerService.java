@@ -1,4 +1,16 @@
 package com.nmcnpm.nhom16.service;
 
-public class CustomerService {
+import com.nmcnpm.nhom16.dao.CustomerDAO;
+import com.nmcnpm.nhom16.entities.Customer;
+
+public class CustomerService implements ICustomerService<Customer> {
+    @Override
+    public boolean register(Customer customer) {
+        return new CustomerDAO().register(customer);
+    }
+
+    @Override
+    public Customer getCustomerByID(int id) {
+        return new CustomerDAO().getCustomerByID(id);
+    }
 }
