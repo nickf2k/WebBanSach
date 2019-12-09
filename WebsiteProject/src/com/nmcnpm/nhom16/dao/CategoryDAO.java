@@ -13,15 +13,14 @@ public class CategoryDAO implements ICategoryDAO<Category> {
     Connection connection;
 
     public CategoryDAO() {
-        if (connection == null && statement == null) {
-            try {
-                connection = ConnectionFactory.getInstance().getConnection();
-                statement = connection.createStatement();
+        try {
+            connection = ConnectionFactory.getInstance().getConnection();
+            statement = connection.createStatement();
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
     @Override
@@ -30,10 +29,10 @@ public class CategoryDAO implements ICategoryDAO<Category> {
         String query = "select * from dbo.Category";
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idCategory = resultSet.getInt(1);
                 String nameCategory = resultSet.getString(2);
-                categoryList.add(new Category(idCategory,nameCategory));
+                categoryList.add(new Category(idCategory, nameCategory));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,10 +43,10 @@ public class CategoryDAO implements ICategoryDAO<Category> {
     @Override
     public Category getCategoryByID(int id) {
         Category category = null;
-        String query = "select * from Book where Book.IdBook = "+ id;
+        String query = "select * from Book where Book.IdBook = " + id;
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idCategory = resultSet.getInt(1);
                 String nameCategory = resultSet.getString(2);
                 category = new Category(idCategory, nameCategory);

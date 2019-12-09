@@ -10,30 +10,28 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
     Connection connection;
 
     public CustomerDAO() {
-        if (connection == null && statement == null) {
-            try {
-                connection = ConnectionFactory.getInstance().getConnection();
-                statement = connection.createStatement();
+        try {
+            connection = ConnectionFactory.getInstance().getConnection();
+            statement = connection.createStatement();
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     @Override
     public Customer getCustomerByID(int id) {
         Customer customer = null;
-        String query = "select * from Customer where Customer.IdCustomer = "+ id;
+        String query = "select * from Customer where Customer.IdCustomer = " + id;
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idCustomer = resultSet.getInt(1);
-                String nameCustomer  = resultSet.getString(2);
+                String nameCustomer = resultSet.getString(2);
                 String phone = resultSet.getString(3);
                 String address = resultSet.getString(4);
                 String email = resultSet.getString(5);
-                customer = new Customer(idCustomer,nameCustomer,phone,address,email);
+                customer = new Customer(idCustomer, nameCustomer, phone, address, email);
             }
         } catch (SQLException e) {
             e.printStackTrace();

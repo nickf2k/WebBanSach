@@ -14,15 +14,14 @@ public class BookDAO implements IBookDao<Book> {
     Connection connection;
 
     public BookDAO() {
-        if (connection == null && statement == null) {
-            try {
-                connection = ConnectionFactory.getInstance().getConnection();
-                statement = connection.createStatement();
+        try {
+            connection = ConnectionFactory.getInstance().getConnection();
+            statement = connection.createStatement();
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
     @Override
@@ -31,7 +30,7 @@ public class BookDAO implements IBookDao<Book> {
         String query = "select * from dbo.Book";
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idBook = resultSet.getInt(1);
                 int idCategory = resultSet.getInt(2);
                 int idAuthor = resultSet.getInt(3);
@@ -41,7 +40,7 @@ public class BookDAO implements IBookDao<Book> {
                 String price = resultSet.getString(7);
                 Date date = resultSet.getDate(8);
                 String imageURL = resultSet.getString(9);
-                bookList.add(new Book(idBook,idCategory,idAuthor,idPublisher,nameBook,description,price,date,imageURL));
+                bookList.add(new Book(idBook, idCategory, idAuthor, idPublisher, nameBook, description, price, date, imageURL));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,10 +51,10 @@ public class BookDAO implements IBookDao<Book> {
     @Override
     public Book getBookByID(int id) {
         Book book = null;
-        String query = "select * from Book where Book.IdBook = "+ id;
+        String query = "select * from Book where Book.IdBook = " + id;
         try {
             ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 int idBook = resultSet.getInt(1);
                 int idCategory = resultSet.getInt(2);
                 int idAuthor = resultSet.getInt(3);
@@ -65,12 +64,36 @@ public class BookDAO implements IBookDao<Book> {
                 String price = resultSet.getString(7);
                 Date date = resultSet.getDate(8);
                 String imageURL = resultSet.getString(9);
-                book = new Book(idBook,idCategory,idAuthor,idPublisher,nameBook,description,price,date,imageURL);
+                book = new Book(idBook, idCategory, idAuthor, idPublisher, nameBook, description, price, date, imageURL);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return book;
+    }
+
+    @Override
+    public List<Book> getBookByIDCategory(int id) {
+        List<Book> bookList = new ArrayList<>();
+        String query = "select * from dbo.Book where IdBook = " + id;
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                int idBook = resultSet.getInt(1);
+                int idCategory = resultSet.getInt(2);
+                int idAuthor = resultSet.getInt(3);
+                int idPublisher = resultSet.getInt(4);
+                String nameBook = resultSet.getString(5);
+                String description = resultSet.getString(6);
+                String price = resultSet.getString(7);
+                Date date = resultSet.getDate(8);
+                String imageURL = resultSet.getString(9);
+                bookList.add(new Book(idBook, idCategory, idAuthor, idPublisher, nameBook, description, price, date, imageURL));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bookList;
     }
 
     public static void main(String[] args) {

@@ -5,4 +5,5 @@ import java.util.List;
 public interface IBookDao<T> {
     List<T> getAllBooks();
     T getBookByID(int id);
+    List<T> getBookByIDCategory(int id);
 }

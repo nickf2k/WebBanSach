@@ -1,4 +1,8 @@
-<%--
+<%@ page import="com.nmcnpm.nhom16.service.BookService" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.nmcnpm.nhom16.entities.Book" %>
+<%@ page import="com.nmcnpm.nhom16.service.CategoryService" %>
+<%@ page import="com.nmcnpm.nhom16.entities.Category" %><%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 11/23/2019
@@ -47,16 +51,21 @@
 <%@include file="Header.jsp"%>
 <div class="container">
 
-    <div class="row" style="padding-top: 32px">
+    <div class="row" style=" padding-top: 32px">
 
         <div class="col-lg-3">
 
             <h1 class="my-4">Shop Name</h1>
+            <% CategoryService categoryService  = new CategoryService();
+                List<Category> list = categoryService.getAllCategory();
+                for (Category category: list
+                ) { %>
+
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <a href="#" class="list-group-item"><%= category.getNameCategory() %></a>
             </div>
+
+            <% }%>
 
         </div>
         <!-- /.col-lg-3 -->
@@ -91,16 +100,19 @@
             </div>
 
             <div class="row">
-
+                <% BookService bookService = new BookService();
+                    List<Book> books = bookService.getAllBook();
+                    for (Book book: books
+                    ) { %>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <a href="#"><img style="padding-top: 5px; padding-left: 1px;" width="100px" height="250px" class="card-img-top" src="<%= book.getImageURL() %>" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Item One </a>
+                                <a href="#"><%= book.getNameBook()%></a>
                             </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <h5><%= book.getPrice() %></h5>
+                            <p class="card-text"><%= book.getDescription() %></p>
                         </div>
                         <div>
                             <div  style="text-align: center; padding-bottom: 20px">
@@ -108,6 +120,7 @@
                                     Buy now
                                 </button>
                             </div>
+
                             <!-- The Modal -->
                             <div class="modal fade" id="myModal">
                                 <div class="modal-dialog modal-lg">
@@ -115,7 +128,7 @@
 
                                         <!-- Modal Header -->
                                         <div class="modal-header">
-                                            <h4 class="modal-title">item name</h4>
+                                            <h4 class="modal-title"><%= book.getNameBook()%></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
 
@@ -123,17 +136,17 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-12">
-                                                    <img src="https://bookbuy.vn/Res/Images/Product/juhgf_97801_2.jpg?w=170&scale=canvas&h=135&quality=90">
+                                                    <img src="<%= book.getImageURL() %>">
                                                 </div>
                                                 <div class="col-lg-8 col-md-12">
                                                     <p>Market price :</p>
-                                                    <p>Price :</p>
+                                                    <p>Price : <%= book.getPrice() %></p>
                                                     <p>Saving : </p>
                                                     <p>status :</p>
                                                     <p style="text-align: center">information and promotion</p>
                                                     <p> Sử dụng mỗi 3.000 BBxu để được giảm 10.000đ ( BBxu là gì & cách lấy BBxu )</p>
                                                     <p> Miễn phí vận chuyển nội thành Sài Gòn từ 150.000đ*. Chi tiết tại: Phương thức vận chuyển</p>
-                                                    <p>  Miễn phí vận chuyển toàn quốc từ 250.000đ</p>
+                                                    <p> Miễn phí vận chuyển toàn quốc từ 250.000đ</p>
                                                     <div style="height: 20px">
                                                         <div class="row quantity-price">
                                                             <span style=" float: left;font-weight: bold; font-size: 20px">QUANTITY :   </span>
@@ -169,86 +182,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Two</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Three</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#"></a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Five</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">Item Six</a>
-                            </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
+                <% } %>
 
             </div>
             <!-- /.row -->
