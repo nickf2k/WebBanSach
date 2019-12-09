@@ -9,7 +9,7 @@ public class ConnectionFactory {
     public static final String MSSQL_URL = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     public static final String  DB_URL = "jdbc:sqlserver://localhost:1433; databaseName=ShellBook";
     public static final String USER = "sa";
-    public static final String PASSWORD = "sa";
+    public static final String PASSWORD = "123";
     public static ConnectionFactory getInstance()throws Exception{
         return new ConnectionFactory();
     }

@@ -1,24 +1,34 @@
 package com.nmcnpm.nhom16.controller;
 
+import com.nmcnpm.nhom16.entities.Account;
+import com.nmcnpm.nhom16.service.AccountService;
+import com.nmcnpm.nhom16.service.IAccountService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class Login extends HttpServlet {
+    AccountService accountService;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        accountService = new AccountService();
+        HttpSession session  = request.getSession();
         String user = request.getParameter("user");
         String password = request.getParameter("password");
-        if (user.equals("12")){
-            RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage.jsp");
-            dispatcher.forward(request,response);
+        boolean checkLogin = accountService.checkLogin(new Account(user,password));
+        System.out.println(checkLogin);
+        if (checkLogin){
+            session.setAttribute("user",user);
+            session.setAttribute("password",password);
+            response.sendRedirect("HomePage.jsp");
         }else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
-            dispatcher.include(request,response);
+            response.sendRedirect("login?err=1");
         }
     }
 
