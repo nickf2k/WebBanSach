@@ -27,7 +27,7 @@ public class CategoryDAO implements ICategoryDAO<Category> {
     @Override
     public List<Category> getAllCategory() {
         List<Category> categoryList = new ArrayList<>();
-        String query = "select * from dbo.Book";
+        String query = "select * from dbo.Category";
         try {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()){

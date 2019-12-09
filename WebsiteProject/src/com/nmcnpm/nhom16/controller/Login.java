@@ -15,11 +15,7 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class Login extends HttpServlet {
-<<<<<<< HEAD
-
-=======
     AccountService accountService;
->>>>>>> 877f9f4cefa06e45e80838dc215ab2b8697745d8
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         accountService = new AccountService();
         HttpSession session  = request.getSession();
