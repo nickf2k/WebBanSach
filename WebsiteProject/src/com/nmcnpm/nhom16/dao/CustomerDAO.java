@@ -1,6 +1,6 @@
 package com.nmcnpm.nhom16.dao;
 
-import com.nmcnpm.nhom16.entities.Book;
+import com.nmcnpm.nhom16.connectdb.ConnectionFactory;
 import com.nmcnpm.nhom16.entities.Customer;
 
 import java.sql.*;
@@ -8,6 +8,19 @@ import java.sql.*;
 public class CustomerDAO implements ICustomerDAO<Customer> {
     Statement statement;
     Connection connection;
+
+    public CustomerDAO() {
+        if (connection == null && statement == null) {
+            try {
+                connection = ConnectionFactory.getInstance().getConnection();
+                statement = connection.createStatement();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public Customer getCustomerByID(int id) {
         Customer customer = null;
