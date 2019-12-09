@@ -10,34 +10,39 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-<%@include file="Header.jsp"%>
 <div class="container">
-
-    <h1 style="padding-top: 60px">Đăng nhập</h1>
-    <%
-        String err = request.getParameter("err");
-        out.print(err);
-        if ("1".equals(err)) {
-            out.print("<h4 style=\"color: red;\">Đăng nhập thất bại</h4>");
-        }
-    %>
-    <form style="padding-bottom: 20px" method="post" action="<%=request.getContextPath()%>/login">
-        <div class="form-group">
-            <label>Tên đăng nhập</label>
-            <input name="user" class="form-control" placeholder="nhập tên đăng nhập">
-        </div>
-        <div class="form-group">
-            <label>Mật khẩu</label>
-            <input name="password" type="password" class="form-control"  placeholder="nhập mật khẩu">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Đăng nhập</button>
-    </form>
+<%@include file="Header.jsp"%>
+<h1 style="padding-top: 60px">Đăng kí</h1>
+<form method="post" action="/register">
+    <div class="form-group">
+        <label>Họ và tên</label>
+        <input  class="form-control" placeholder="nhập tên đầy đủ">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input  class="form-control" placeholder="nhập email">
+    </div>
+    <div class="form-group">
+        <label>Tên đăng nhập</label>
+        <input  class="form-control" placeholder="nhập tên đăng nhập">
+    </div>
+    <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" class="form-control"  placeholder="nhập mật khẩu">
+    </div>
+    <div class="form-group">
+        <label>Nhập lại mật khẩu</label>
+        <input type="password" class="form-control"  placeholder="nhập mật khẩu">
+    </div>
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        <input  class="form-control" placeholder="nhập số điện thoại">
+    </div>
+    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+</form>
 </div>
 <%@include file="Footer.jsp"%>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
