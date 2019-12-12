@@ -73,9 +73,9 @@ public class BookDAO implements IBookDao<Book> {
     }
 
     @Override
-    public List<Book> getBookByIDCategory(int id) {
+    public List<Book> getBooksByIDCategory(int id) {
         List<Book> bookList = new ArrayList<>();
-        String query = "select * from dbo.Book where IdBook = " + id;
+        String query = "select * from dbo.Book where IdCategory = " + id;
         try {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
@@ -99,6 +99,6 @@ public class BookDAO implements IBookDao<Book> {
     public static void main(String[] args) {
 //        List<Book> listBooks = new BookDAO().getAllBooks();
 //        listBooks.forEach(book -> System.out.println(book));
-        System.out.println(new BookDAO().getBookByID(1));
+        System.out.println(new BookDAO().getBooksByIDCategory(2));
     }
 }
