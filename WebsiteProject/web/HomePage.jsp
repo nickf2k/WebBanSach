@@ -55,14 +55,13 @@
 
         <div class="col-lg-3">
 
-            <h1 class="my-4">Shop Name</h1>
+            <h1 class="my-4">Book Shop</h1>
             <% CategoryService categoryService  = new CategoryService();
                 List<Category> list = categoryService.getAllCategory();
                 for (Category category: list
                 ) { %>
-
             <div class="list-group">
-                <a href="#" class="list-group-item"><%= category.getNameCategory() %></a>
+                <a href="<%=request.getContextPath()%>/listbook?id=<%= category.getIdCategory()%>" class="list-group-item"><%= category.getNameCategory() %></a>
             </div>
 
             <% }%>
@@ -70,7 +69,7 @@
         </div>
         <!-- /.col-lg-3 -->
 
-        <div class="col-lg-9">
+        <div class="col-lg-9" style="padding-top: 3px">
 
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -80,13 +79,13 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                        <img class="d-block img-fluid" src="./img/slide/1.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                        <img class="d-block img-fluid" src="./img/slide/2.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                        <img class="d-block img-fluid" src="./img/slide/3.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

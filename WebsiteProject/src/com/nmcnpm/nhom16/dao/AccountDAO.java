@@ -44,6 +44,7 @@ public class AccountDAO implements IAccountDAO<Account> {
         return false;
     }
 
+
     public static void main(String[] args) {
         boolean re = new AccountDAO().checkLogin(new Account("nghia", "12345"));
         System.out.println(re);
