@@ -43,7 +43,7 @@ public class CategoryDAO implements ICategoryDAO<Category> {
     @Override
     public Category getCategoryByID(int id) {
         Category category = null;
-        String query = "select * from Book where Book.IdBook = " + id;
+        String query = "select Category.IdCategory, Category.NameCategory from Category where Category.IdCategory = " + id;
         try {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
@@ -55,5 +55,9 @@ public class CategoryDAO implements ICategoryDAO<Category> {
             e.printStackTrace();
         }
         return category;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new CategoryDAO().getCategoryByID(1));
     }
 }

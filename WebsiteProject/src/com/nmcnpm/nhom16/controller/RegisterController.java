@@ -10,9 +10,14 @@ import java.io.IOException;
 @WebServlet(name = "Register", urlPatterns = "/register")
 public class RegisterController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/home");
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage.j");
 //        dispatcher.forward(request,response);
+          String nameCustomer = request.getParameter("NameCustomer");
+          String email = request.getParameter("Email");
+          String user = request.getParameter("User");
+          String pass = request.getParameter("Pass");
+          String address = request.getParameter("Address");
+          String phone = request.getParameter("Phone");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

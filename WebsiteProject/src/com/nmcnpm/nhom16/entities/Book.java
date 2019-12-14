@@ -25,7 +25,7 @@ public class Book {
         this.imageURL = imageURL;
     }
 
-    public Book() {
+    public Book(int idBook, int idAuthor, int idPublisher, String nameBook, String description, String price, Date date, String imageURL) {
     }
 
     public int getIdBook() {

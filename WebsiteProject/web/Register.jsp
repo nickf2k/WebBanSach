@@ -16,30 +16,30 @@
 <div class="container">
 <%@include file="Header.jsp"%>
 <h1 style="padding-top: 60px">Đăng kí</h1>
-<form method="post" action="/register">
+<form method="post" action="<%= request.getContextPath() %>/register">
     <div class="form-group">
         <label>Họ và tên</label>
-        <input  class="form-control" placeholder="nhập tên đầy đủ">
+        <input  class="form-control" name="NameCustomer" placeholder="nhập tên đầy đủ">
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input  class="form-control" placeholder="nhập email">
+        <input  class="form-control" name="Email" placeholder="nhập email">
     </div>
     <div class="form-group">
         <label>Tên đăng nhập</label>
-        <input  class="form-control" placeholder="nhập tên đăng nhập">
+        <input  class="form-control" name="User" placeholder="nhập tên đăng nhập">
     </div>
     <div class="form-group">
         <label>Mật khẩu</label>
-        <input type="password" class="form-control"  placeholder="nhập mật khẩu">
+        <input type="password" class="form-control" name="Pass"  placeholder="nhập mật khẩu">
     </div>
     <div class="form-group">
-        <label>Nhập lại mật khẩu</label>
-        <input type="password" class="form-control"  placeholder="nhập mật khẩu">
+        <label>Địa chỉ</label>
+        <input type="text" class="form-control" name="Address"  placeholder="nhập địa chỉ">
     </div>
     <div class="form-group">
         <label>Số điện thoại</label>
-        <input  class="form-control" placeholder="nhập số điện thoại">
+        <input  class="form-control" name="Phone" placeholder="nhập số điện thoại">
     </div>
     <button type="submit" class="btn btn-primary">Đăng nhập</button>
 </form>

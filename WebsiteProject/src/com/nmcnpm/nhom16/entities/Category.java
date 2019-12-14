@@ -4,6 +4,7 @@ public class Category {
     private int idCategory;
     private String nameCategory;
 
+
     public Category(int idCategory) {
         this.idCategory = idCategory;
     }

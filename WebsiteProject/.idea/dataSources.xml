@@ -7,5 +7,11 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://localhost:1433;database=ShellBook</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="2ea1a820-d341-41ec-bd51-4bb7a7208f9a">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433</jdbc-url>
+    </data-source>
   </component>
 </project>

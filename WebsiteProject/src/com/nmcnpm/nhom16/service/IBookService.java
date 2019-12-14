@@ -7,4 +7,5 @@ import java.util.List;
 public interface IBookService<T> {
     public List<T> getAllBook();
     public Book getBookByID(int id);
+    public List<T> getBookByIdCategory(int id);
 }
