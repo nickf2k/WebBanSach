@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee561148-4149-499d-a84c-cabbd988fc46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/AddToCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/entities/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/entities/SessionOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebsiteProject/web/addOder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/HomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/HomePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/META-INF/WebsiteProject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/controller/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/controller/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/IBookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/dao/IBookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/service/IBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/WEB-INF/classes/com/nmcnpm/nhom16/service/IBookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/artifacts/WebsiteProject/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/controller/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/controller/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/IBookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/dao/IBookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/service/IBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/out/production/WebsiteProject/com/nmcnpm/nhom16/service/IBookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/ListBookById.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/ListBookById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/service/IBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/src/com/nmcnpm/nhom16/service/IBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/web/Cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/web/Cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/web/Header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/web/Header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/web/HomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/web/HomePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/web/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteProject/web/listBook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteProject/web/listBook.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1V29PbIIgjnFawVLfvG6U8ybJqv" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebsiteProject" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee561148-4149-499d-a84c-cabbd988fc46" name="Default Changelist" comment="" />
+      <created>1576440299715</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576440299715</updated>
+      <workItem from="1576440301227" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
