@@ -10,30 +10,36 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-<%@include file="Header.jsp"%>
 <div class="container">
-
-    <h1 style="padding-top: 60px">Đăng nhập</h1>
-    <%
-        String err = request.getParameter("err");
-        if ("1".equals(err)) {
-            out.print("<h4 style=\"color: red;\">Đăng nhập thất bại</h4>");
-        }
-    %>
-    <form style="padding-bottom: 20px" method="post" action="<%=request.getContextPath()%>/login">
+    <%@include file="Header.jsp"%>
+    <h1 style="padding-top: 60px">Đăng kí</h1>
+    <form method="post" action="<%= request.getContextPath() %>/addOder.jsp">
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input  class="form-control" name="NameCustomer" placeholder="nhập tên đầy đủ">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input  class="form-control" name="Email" placeholder="nhập email">
+        </div>
         <div class="form-group">
             <label>Tên đăng nhập</label>
-            <input name="user" class="form-control" placeholder="nhập tên đăng nhập">
+            <input  class="form-control" name="User" placeholder="nhập tên đăng nhập">
         </div>
         <div class="form-group">
             <label>Mật khẩu</label>
-            <input name="password" type="password" class="form-control"  placeholder="nhập mật khẩu">
+            <input type="password" class="form-control" name="Pass"  placeholder="nhập mật khẩu">
         </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
+        <div class="form-group">
+            <label>Địa chỉ</label>
+            <input type="text" class="form-control" name="Address"  placeholder="nhập địa chỉ">
+        </div>
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input  class="form-control" name="Phone" placeholder="nhập số điện thoại">
         </div>
         <button type="submit" class="btn btn-primary">Đăng nhập</button>
     </form>

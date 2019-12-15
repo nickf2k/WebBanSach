@@ -18,7 +18,6 @@
     <h1 style="padding-top: 60px">Đăng nhập</h1>
     <%
         String err = request.getParameter("err");
-        out.print(err);
         if ("1".equals(err)) {
             out.print("<h4 style=\"color: red;\">Đăng nhập thất bại</h4>");
         }

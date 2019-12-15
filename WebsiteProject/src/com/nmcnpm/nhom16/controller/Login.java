@@ -16,11 +16,13 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class Login extends HttpServlet {
     AccountService accountService;
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         accountService = new AccountService();
         HttpSession session  = request.getSession();
         String user = request.getParameter("user");
         String password = request.getParameter("password");
+        session.setAttribute("user",user);
         boolean checkLogin = accountService.checkLogin(new Account(user,password));
         System.out.println(checkLogin);
         if (checkLogin){

@@ -8,5 +8,5 @@ public interface IBookService<T> {
     public List<T> getAllBook();
 
     public T getBookByID(int id);
-    public List<T> getBookByIdCategory(int id);
+    public List<T> getBooksByIDCategory(int id);
 }
