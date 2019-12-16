@@ -41,8 +41,8 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
     }
 
     @Override
-    public boolean register(Customer customer) {
-        return true;
+    public String register(Customer customer) {
+        return "";
     }
 
     public static void main(String[] args) {

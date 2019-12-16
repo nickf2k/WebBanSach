@@ -7,7 +7,5 @@ public class AccountService implements IAccountService<Account> {
     @Override
     public boolean checkLogin(Account account) {
         return new AccountDAO().checkLogin(account);
-//        System.out.println(res);
-//        return res;
     }
 }

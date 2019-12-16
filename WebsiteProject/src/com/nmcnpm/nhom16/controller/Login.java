@@ -17,10 +17,12 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     AccountService accountService;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         accountService = new AccountService();
         HttpSession session  = request.getSession();
         String user = request.getParameter("user");
         String password = request.getParameter("password");
+        session.setAttribute("user",user);
         boolean checkLogin = accountService.checkLogin(new Account(user,password));
         System.out.println(checkLogin);
         if (checkLogin){
@@ -28,7 +30,7 @@ public class Login extends HttpServlet {
             session.setAttribute("password",password);
             response.sendRedirect("HomePage.jsp");
         }else {
-            response.sendRedirect("login?err=1");
+            response.sendRedirect("Login.jsp?err=1");
         }
     }
 

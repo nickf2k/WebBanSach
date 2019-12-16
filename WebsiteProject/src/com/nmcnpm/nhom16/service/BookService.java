@@ -18,7 +18,7 @@ public class BookService implements IBookService<Book> {
 
 
     @Override
-    public List<Book> getBooksByCategoryID(int id) {
+    public List<Book> getBooksByIDCategory(int id) {
         return new BookDAO().getBooksByIDCategory(id);
     }
 

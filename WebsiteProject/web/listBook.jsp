@@ -63,7 +63,7 @@
     <div  class="row">
     <%
         BookService bookService = new BookService();
-        List<Book> list =   bookService.getBookByIdCategory(idCategory);
+        List<Book> list =   bookService.getBooksByIDCategory(idCategory);
         for (Book book: list){
     %>
     <div class="col-lg-4 col-md-6 mb-4">
