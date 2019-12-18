@@ -150,7 +150,7 @@
                                                     <p> Sử dụng mỗi 3.000 BBxu để được giảm <strong>10.000đ </strong>( BBxu là gì & cách lấy BBxu )</p>
                                                     <p> Miễn phí vận chuyển nội thành Sài Gòn từ <strong>150.000đ </strong>. Chi tiết tại: <a href="#">Phương thức vận chuyển</a></p>
                                                     <p> Miễn phí vận chuyển toàn quốc từ <strong>250.000đ</strong></p>
-                                                    <span>Số lượng  </span><input name="quantity" value="">
+                                                    <span>Số lượng  </span><input name="quantity" value="1">
                                                 </div>
                                             </div>
                                         </div>

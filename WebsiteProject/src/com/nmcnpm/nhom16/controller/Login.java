@@ -1,7 +1,9 @@
 package com.nmcnpm.nhom16.controller;
 
 import com.nmcnpm.nhom16.entities.Customer;
+import com.nmcnpm.nhom16.service.AdminService;
 import com.nmcnpm.nhom16.service.CustomerService;
+import com.nmcnpm.nhom16.service.ICustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,23 +15,33 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class Login extends HttpServlet {
-    CustomerService customerService;
+    ICustomerService customerService;
+    AdminService adminService;
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         customerService = new CustomerService();
+        adminService = new AdminService();
         HttpSession session  = request.getSession();
         String user = request.getParameter("user");
         String password = request.getParameter("password");
-
-        boolean checkLogin = customerService.checkLogin(new Customer(user,password));
-//        session.setAttribute("user",user);
-        System.out.println(checkLogin);
-        if (checkLogin){
+        boolean isAdmin = adminService.isAdmin(user,password);
+        if (isAdmin){
             session.setAttribute("user",user);
             session.setAttribute("password",password);
-            response.sendRedirect("HomePage.jsp");
-        }else {
-            response.sendRedirect("Login.jsp?err=1");
+            response.sendRedirect("AdminHomePage.jsp");
+            return;
+        }
+        else {
+            boolean checkLogin = customerService.checkLogin(new Customer(user, password));
+//        session.setAttribute("user",user);
+            System.out.println(checkLogin);
+            if (checkLogin) {
+                session.setAttribute("user", user);
+                session.setAttribute("password", password);
+                response.sendRedirect("HomePage.jsp");
+            } else {
+                response.sendRedirect("Login.jsp?err=1");
+            }
         }
     }
 

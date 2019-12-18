@@ -24,10 +24,10 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
         String query = "select * from Customer where Customer.IdCustomer = ?";
         try {
             preparedStatement = connectionFactory.getConnection().prepareStatement(query);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery(query);
             while (resultSet.next()) {
-                int idCustomer = resultSet.getInt(1);
+                String idCustomer = resultSet.getString(1);
                 String nameCustomer = resultSet.getString(2);
                 String phone = resultSet.getString(3);
                 String address = resultSet.getString(4);
@@ -46,8 +46,30 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
     }
 
     @Override
-    public String register(Customer customer) {
-        return "";
+    public boolean register(Customer customer) {
+        String query = "INSERT INTO Customer VALUES(?,?,?,?,?,?)";
+        try {
+            if (connection == null) {
+                connection = ConnectionFactory.getInstance().getConnection();
+                System.out.println("make connection in checkLogin");
+            }
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, customer.getNameCustomer());
+            preparedStatement.setString(2, customer.getPhoneNumber());
+            preparedStatement.setString(3, customer.getAddress());
+            preparedStatement.setString(4, customer.getEmail());
+            preparedStatement.setString(5, customer.getUser());
+            preparedStatement.setString(6, customer.getPassword());
+            int intRes = preparedStatement.executeUpdate();
+            connectionFactory.closeConnection();
+            preparedStatement.close();
+            if (intRes == 1) {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
@@ -75,8 +97,25 @@ public class CustomerDAO implements ICustomerDAO<Customer> {
         return false;
     }
 
-    public static void main(String[] args) {
-//        Customer customer = new CustomerDAO().getCustomerByID(1);
-
+    @Override
+    public int getIDFromUser(String user) {
+        int resultInt = 0;
+        String query = "select IdCustomer from Customer where [User] = ?";
+        try {
+            if (connection == null) {
+                connection = ConnectionFactory.getInstance().getConnection();
+                System.out.println("make connection in checkLogin");
+            }
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                resultInt = resultSet.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultInt;
     }
+
 }

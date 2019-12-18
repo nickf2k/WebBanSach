@@ -7,4 +7,6 @@ public interface ICustomerDAO<T> {
     boolean register(T t);
 
     boolean checkLogin(T t);
+
+    int getIDFromUser(String user);
 }

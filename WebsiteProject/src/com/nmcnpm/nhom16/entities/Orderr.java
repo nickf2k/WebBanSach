@@ -3,17 +3,17 @@ package com.nmcnpm.nhom16.entities;
 import java.sql.Date;
 
 public class Orderr {
-    private int idOrder;
+    private String idOrder;
     private int idCustomer;
     private Date date;
     private String address;
     private String total;
 
-    public Orderr(int idOrder) {
+    public Orderr(String idOrder) {
         this.idOrder = idOrder;
     }
 
-    public Orderr(int idOrder, int idCustomer, Date date, String address, String total) {
+    public Orderr(String idOrder, int idCustomer, Date date, String address, String total) {
         this.idOrder = idOrder;
         this.idCustomer = idCustomer;
         this.date = date;
@@ -21,11 +21,11 @@ public class Orderr {
         this.total = total;
     }
 
-    public int getIdOrder() {
+    public String getIdOrder() {
         return idOrder;
     }
 
-    public void setIdOrder(int idOrder) {
+    public void setIdOrder(String idOrder) {
         this.idOrder = idOrder;
     }
 

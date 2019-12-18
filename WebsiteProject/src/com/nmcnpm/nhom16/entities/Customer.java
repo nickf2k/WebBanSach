@@ -1,7 +1,7 @@
 package com.nmcnpm.nhom16.entities;
 
 public class Customer {
-    private int idCustomer;
+    private String idCustomer;
     private String nameCustomer;
     private String phoneNumber;
     private String address;
@@ -30,11 +30,11 @@ public class Customer {
         this.password = password;
     }
 
-    public Customer(int idCustomer) {
+    public Customer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 
-    public Customer(int idCustomer, String nameCustomer, String phoneNumber, String address, String email, String user, String password) {
+    public Customer(String idCustomer, String nameCustomer, String phoneNumber, String address, String email, String user, String password) {
         this.idCustomer = idCustomer;
         this.nameCustomer = nameCustomer;
         this.phoneNumber = phoneNumber;
@@ -44,11 +44,11 @@ public class Customer {
         this.password = password;
     }
 
-    public int getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(int idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 
@@ -82,5 +82,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Customer(String nameCustomer, String phoneNumber, String address, String email, String user, String password) {
+        this.nameCustomer = nameCustomer;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.email = email;
+        this.user = user;
+        this.password = password;
     }
 }

@@ -37,6 +37,7 @@
             <label>Tổng số tiền phải thanh toán</label>
             <input  class="form-control" name="totalMoney" value="">
         </div>
+
         <button type="submit" class="btn btn-primary">Thanh toán</button>
     </form>
 </div>
