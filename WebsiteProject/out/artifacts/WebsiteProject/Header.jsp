@@ -25,7 +25,10 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="Cart.jsp">Giỏ Hàng</a>
+                    <a class="nav-link" href="<%=request.getContextPath()%>/display">Giỏ hàng
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Khuyến Mãi</a>

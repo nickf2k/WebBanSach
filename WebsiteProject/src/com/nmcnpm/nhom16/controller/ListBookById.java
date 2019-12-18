@@ -25,7 +25,7 @@ public class ListBookById extends HttpServlet {
         String id = request.getParameter("id");
         int idCategory = Integer.parseInt(id);
         BookService bookService = new BookService();
-        List<Book> books = bookService.getBookByIdCategory(idCategory);
+        List<Book> books = bookService.getBooksByIDCategory(idCategory);
         response.sendRedirect("listBook.jsp?id="+idCategory);
 
 

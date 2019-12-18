@@ -25,15 +25,13 @@ public class AddToCard extends HttpServlet {
     Book book;
     BookService bookService;
 
-    public AddToCard() {
-        super();
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session  = request.getSession();
-        if (session.getAttribute("user") != null) {
+        String user = (String) session.getAttribute("user");
+
+        if (user!=null && !user.equals("")) {
             String errorString = null;
             bookService = new BookService();
             int quantity = 1;
@@ -71,7 +69,8 @@ public class AddToCard extends HttpServlet {
             session.setAttribute("listItems", listItems);
             int len = listItems.size();
             response.sendRedirect("HomePage.jsp");
-        }else {
+        }
+        else {
             response.sendRedirect("HomePage.jsp");
         }
     }

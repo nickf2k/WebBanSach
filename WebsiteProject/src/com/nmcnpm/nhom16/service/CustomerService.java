@@ -5,7 +5,7 @@ import com.nmcnpm.nhom16.entities.Customer;
 
 public class CustomerService implements ICustomerService<Customer> {
     @Override
-    public boolean register(Customer customer) {
+    public String register(Customer customer) {
         return new CustomerDAO().register(customer);
     }
 
