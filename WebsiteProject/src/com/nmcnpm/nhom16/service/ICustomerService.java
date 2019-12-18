@@ -5,4 +5,6 @@ import com.nmcnpm.nhom16.entities.Customer;
 public interface ICustomerService<T> {
     String register(T t);
     T getCustomerByID(int id);
+
+    boolean checkLogin(T t);
 }

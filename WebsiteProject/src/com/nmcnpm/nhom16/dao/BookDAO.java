@@ -96,6 +96,30 @@ public class BookDAO implements IBookDao<Book> {
         return bookList;
     }
 
+//    @Override
+//    public List<Book> getBooksByIDCategory(int id) {
+//        List<Book> bookList = new ArrayList<>();
+//        String query = "select * from dbo.Book where IdCategory = " + id;
+//        try {
+//            ResultSet resultSet = statement.executeQuery(query);
+//            while (resultSet.next()) {
+//                int idBook = resultSet.getInt(1);
+//                int idCategory = resultSet.getInt(2);
+//                int idAuthor = resultSet.getInt(3);
+//                int idPublisher = resultSet.getInt(4);
+//                String nameBook = resultSet.getString(5);
+//                String description = resultSet.getString(6);
+//                String price = resultSet.getString(7);
+//                Date date = resultSet.getDate(8);
+//                String imageURL = resultSet.getString(9);
+//                bookList.add(new Book(idBook,idCategory, idAuthor, idPublisher, nameBook, description, price, date, imageURL));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return bookList;
+//    }
+
     public static void main(String[] args) {
 //        List<Book> listBooks = new BookDAO().getAllBooks();
 //        listBooks.forEach(book -> System.out.println(book));

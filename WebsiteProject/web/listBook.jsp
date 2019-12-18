@@ -13,7 +13,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Book Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .quantity-price{
@@ -48,6 +48,11 @@
         }
     </style>
 </head>
+<script>
+    function convert_number(num){
+        return (num).toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,')+' VNĐ';
+    }
+</script>
 <%@include file="Header.jsp"%>
 <body class="container">
     <%
@@ -73,7 +78,7 @@
                 <h4 class="card-title">
                     <a href="#"><%= book.getNameBook() %></a>
                 </h4>
-                <h5><%= book.getPrice() %></h5>
+                <h5><script>document.write(convert_number(<%= book.getPrice() %>))</script></h5>
                 <p class="card-text"><%= book.getDescription() %></p>
             </div>
             <div>

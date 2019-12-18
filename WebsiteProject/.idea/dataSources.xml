@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ShellBook@localhost" uuid="565d32a3-4f2b-40c3-9d13-8fa2ef44c7c3">
+    <data-source source="LOCAL" name="ShellBook@localhost" uuid="41f7f023-21c8-490d-9f31-895fb81e2415">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://localhost:1433;database=ShellBook</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="2ea1a820-d341-41ec-bd51-4bb7a7208f9a">
-      <driver-ref>sqlserver.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433</jdbc-url>
     </data-source>
   </component>
 </project>

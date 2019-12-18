@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Book Shop</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -24,6 +24,9 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+<%--                <form style="padding-top: 10px; text-align: center" action="<%=request.getContextPath()%>/display">--%>
+<%--                    <button type="submit" class="btn btn-primary">Giỏ hàng</button>--%>
+<%--                </form>--%>
                 <li class="nav-item active">
                     <a class="nav-link" href="<%=request.getContextPath()%>/display">Giỏ hàng
                         <span class="sr-only">(current)</span>

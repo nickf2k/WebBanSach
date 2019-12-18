@@ -13,4 +13,9 @@ public class CustomerService implements ICustomerService<Customer> {
     public Customer getCustomerByID(int id) {
         return new CustomerDAO().getCustomerByID(id);
     }
+
+    @Override
+    public boolean checkLogin(Customer customer) {
+        return new CustomerDAO().checkLogin(customer);
+    }
 }

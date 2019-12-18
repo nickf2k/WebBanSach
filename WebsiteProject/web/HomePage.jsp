@@ -12,9 +12,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Book Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<script>
+    function convert_number(num){
+        return (num).toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,')+' VNĐ';
+    }
+</script>
 <style>
     .quantity-price{
         position: absolute;
@@ -110,7 +115,7 @@
                             <h4 class="card-title">
                                 <a href="#"><%= book.getNameBook()%></a>
                             </h4>
-                            <h5><%= book.getPrice() %></h5>
+                            <h5><script>document.write(convert_number(<%= book.getPrice() %>))</script></h5>
                             <p class="card-text"><%= book.getDescription() %></p>
                         </div>
                         <div>
@@ -132,7 +137,7 @@
                                         </div>
 
                                         <!-- Modal body -->
-                                        <form style="padding-top: 10px; text-align: center" action="<%=request.getContextPath()%>/addtocard">
+                                        <form style="padding-top: 10px" action="<%=request.getContextPath()%>/addtocard">
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-12">
@@ -140,14 +145,12 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-12">
                                                     <input name="custId" hidden="hidden" value="<%= book.getIdBook() %>">
-                                                    <p id="price" /> <%= book.getPrice() %><br>
-                                                    <p>Saving : </p>
-                                                    <p>status :</p>
-                                                    <p style="text-align: center">information and promotion</p>
-                                                    <p> Sử dụng mỗi 3.000 BBxu để được giảm 10.000đ ( BBxu là gì & cách lấy BBxu )</p>
-                                                    <p> Miễn phí vận chuyển nội thành Sài Gòn từ 150.000đ*. Chi tiết tại: Phương thức vận chuyển</p>
-                                                    <p> Miễn phí vận chuyển toàn quốc từ 250.000đ</p>
-                                                    <span>Số lượng  </span><input name="quantity" value="1">
+                                                    <h5 id="price">Giá bán: <strong><script>document.write(convert_number(<%= book.getPrice() %>))</script></strong></h5><br>
+                                                    <p style="text-align: center">Thông tin và khuyến mãi</p>
+                                                    <p> Sử dụng mỗi 3.000 BBxu để được giảm <strong>10.000đ </strong>( BBxu là gì & cách lấy BBxu )</p>
+                                                    <p> Miễn phí vận chuyển nội thành Sài Gòn từ <strong>150.000đ </strong>. Chi tiết tại: <a href="#">Phương thức vận chuyển</a></p>
+                                                    <p> Miễn phí vận chuyển toàn quốc từ <strong>250.000đ</strong></p>
+                                                    <span>Số lượng  </span><input name="quantity" value="">
                                                 </div>
                                             </div>
                                         </div>

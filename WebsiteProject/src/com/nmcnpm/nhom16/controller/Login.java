@@ -1,10 +1,8 @@
 package com.nmcnpm.nhom16.controller;
 
-import com.nmcnpm.nhom16.entities.Account;
-import com.nmcnpm.nhom16.service.AccountService;
-import com.nmcnpm.nhom16.service.IAccountService;
+import com.nmcnpm.nhom16.entities.Customer;
+import com.nmcnpm.nhom16.service.CustomerService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,15 +13,16 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class Login extends HttpServlet {
-    AccountService accountService;
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        accountService = new AccountService();
+    CustomerService customerService;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        customerService = new CustomerService();
         HttpSession session  = request.getSession();
         String user = request.getParameter("user");
         String password = request.getParameter("password");
-        session.setAttribute("user",user);
-        boolean checkLogin = accountService.checkLogin(new Account(user,password));
+
+        boolean checkLogin = customerService.checkLogin(new Customer(user,password));
+//        session.setAttribute("user",user);
         System.out.println(checkLogin);
         if (checkLogin){
             session.setAttribute("user",user);
